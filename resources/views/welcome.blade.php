@@ -385,28 +385,33 @@
 @section ('content')
 
 
-<div class="">
-    @if (Route::has('login'))
-    <div class="">
-        @auth
-        <a href="{{ url('/home') }}" class="">Home</a>
-        @else
-        <a href="{{ route('login') }}" class="">Log in</a>
+<nav class="navbar navbar-expand-lg bg-info">
+    <div class="container-fluid d-flex justify-content-end me-3">
+        @if (Route::has('login'))
+        <div class="">
+            @auth
+            <a href="{{ url('/home') }}" class="">Home</a>
+            @else
+            <a href="{{ route('login') }}" class="">Log in</a>
 
-        @if (Route::has('register'))
-        <a href="{{ route('register') }}" class="">Register</a>
-        @endif
-        @endauth
-    </div>
-    @endif
-
-    <div class="container text-center">
-        <div class="m-5">
-
-            <a href="{{url('/banghay')}}" class="btn btn-success">Home Page</a>
-
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="">Register</a>
+            @endif
+            @endauth
         </div>
     </div>
+</nav>
+@endif
+
+<div class="container text-center">
+    <div class="m-5">
+
+        <a href="{{url('/banghay')}}" class="btn btn-success">Home Page</a>
+
+    </div>
+
+    <h1>This is the Landing Page</h1>
+</div>
 
 
-    @endsection
+@endsection
