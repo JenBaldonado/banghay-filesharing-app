@@ -400,8 +400,8 @@
     </div>
     @endif
 
-    <div class="">
-        <div class="">
+    <div class="container text-center">
+        <div class="m-5">
 
             <a href="{{url('/banghay')}}" class="btn btn-success">Home Page</a>
 
