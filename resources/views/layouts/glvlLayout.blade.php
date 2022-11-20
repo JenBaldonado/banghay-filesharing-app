@@ -31,7 +31,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <a class="navbar-brand" href="{{ url('/banghay') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <span class="name">{{ config('app.name', 'Laravel') }}</span>
                     </a>
                 </div>
