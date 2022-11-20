@@ -9,7 +9,10 @@ class Banghay extends Model
 {
     use HasFactory;
 
-    /* protected $fillable = [
-        'file'
-    ]; */
+    protected $table = 'banghays';
+
+    protected $fillable = [
+        'file',
+        'name'
+    ];
 }

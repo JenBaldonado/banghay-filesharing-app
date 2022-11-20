@@ -18,7 +18,7 @@ class BanghayController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:pdf,doc,docx|max:2048',
+            'file' => 'required|mimes:pdf|max:2048',
         ]);
 
         $file = $request->file;
@@ -26,18 +26,25 @@ class BanghayController extends Controller
 
         $filename = time() . '.' . $file->getClientOriginalExtension();
 
-        $request->file->move(public_path('assets'), $filename);
+        $request->file->move(public_path('uploads'), $filename);
         $data->file = $filename;
-
         $data->name = $request->name;
         $data->gradelevel = $request->gradelevel;
         $data->subject = $request->subject;
 
         $data->save();
         /* (error_log($data)); */
-        return redirect()->back();
-        /* ->with('mssg', 'Thanks for sharing your lesson plan.'); */
+        /* return redirect()->back(); */
     }
+
+    /* if ($result) {
+            return back()->with('success', 'Success! file uploaded');
+        } else {
+            return back()->with('failed', 'Alert! file not uploaded');
+        } */
+    /* } */
+    /* ->with('mssg', 'Thanks for sharing your lesson plan.'); */
+
 
     /*  public function show()
     {
@@ -48,7 +55,7 @@ class BanghayController extends Controller
     public function download(Request $request, $file)
     {
 
-        return response()->download(public_path('assets/' . $file));
+        return response()->download(public_path('uploads/' . $file));
     }
 
     public function preview($id)

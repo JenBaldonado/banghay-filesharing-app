@@ -61,73 +61,116 @@
   </div>
 </div>
 <div class="share-container">
-  <button type="button" name="share-button" id="sharebtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share your work</button>
+  <button type="button" name="share-button" id="share-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share your work</button>
 </div>
 
 
 <!----------------------------------------Pop Up Upload----------------------------------->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Share Your Lesson Plan</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <form action="{{url('uploadfile')}}" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
+          <!--  action="{{url('uploadfile')}}" -->
           @csrf
-          <label for="subject">Select the subject:</label>
-          <select title="subject" name="subject" id="subject" class="subject-select">
-            <option value="Math">
-              Math
-            </option>
-            <option value="English">
-              English
-            </option>
-            <option value="Science">
-              Science
-            </option>
-            <option value="MAPEH">
-              MAPEH
-            </option>
-            <option value="Araling Panlipunan">
-              Araling Panlipunan
-            </option>
-          </select>
-          <label for="gradelevel">Select the grade level:</label>
-          <select name="gradelevel" title="gradelevel" id="gradelevel" class="gradelevel-select">
-            <option value="Grade 1">
-              Grade 1
-            </option>
-            <option value="Grade 2">
-              Grade 2
-            </option>
-            <option value="Grade 3">
-              Grade 3
-            </option>
-            <option value="Grade 4">
-              Grade 4
-            </option>
-            <option value="Grade 5">
-              Grade 5
-            </option>
-            <option value="Grade 6">
-              Grade 6
-            </option>
-          </select>
+          <fieldset>
+            <label for="subject">Select the subject:</label>
+            <select title="subject" name="subject" id="subject" class="subject-select form-control">
+              <option selected value="Math">
+                Math
+              </option>
+              <option value="English">
+                English
+              </option>
+              <option value="Science">
+                Science
+              </option>
+              <option value="MAPEH">
+                MAPEH
+              </option>
+              <option value="Araling Panlipunan">
+                Araling Panlipunan
+              </option>
+              <option value="ESP">
+                ESP
+              </option>
+              <option value="TLE">
+                TLE
+              </option>
+              <option value="Computer">
+                Computer
+              </option>
+              <option value="Music">
+                Music
+              </option>
+              <option value="Arts">
+                Arts
+              </option>
+              <option value="Physical Education">
+                Physical Education
+              </option>
+              <option value="Health">
+                Health
+              </option>
 
-          <input type="text" name="name" placeholder="lesson plan title" required />
-          <input type="file" name="file">
-          <input type="submit">
+            </select>
+
+            <label for="gradelevel">Select the grade level:</label>
+            <select name="gradelevel" title="gradelevel" id="gradelevel" class="gradelevel-select form-control">
+              <option selected value="Grade 1">
+                Grade 1
+              </option>
+              <option value="Grade 2">
+                Grade 2
+              </option>
+              <option value="Grade 3">
+                Grade 3
+              </option>
+              <option value="Grade 4">
+                Grade 4
+              </option>
+              <option value="Grade 5">
+                Grade 5
+              </option>
+              <option value="Grade 6">
+                Grade 6
+              </option>
+            </select>
+
+          </fieldset>
+
+          <fieldset>
+            <label>Write the title:</label>
+            <input type="text" name="name" placeholder="A Detailed Lesson Plan In Math 4" class="form-control" required />
+            <label>choose your file:</label>
+            <input type="file" name="file" class="form-control @error('file') is-invalid @enderror">
+            @error('file')
+            <div class="invalid-feedback">{{ $message }} </div>
+            @enderror
+            <input type="submit" value="Upload" id="upload" class="upload">
+          </fieldset>
 
         </form>
 
       </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary upload" onclick="upload()">Upload</button>
-      </div> -->
     </div>
   </div>
 </div>
 @endsection
+
+<!-- @section('scripts')
+
+<script>
+  $(document).ready(function() {
+    $(document).on('click', 'upload', function(e) {
+      e.preventDefault();
+      console.log('hello')
+    })
+  })
+</script>
+
+@endsection -->
