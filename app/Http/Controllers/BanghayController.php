@@ -34,7 +34,7 @@ class BanghayController extends Controller
 
         $data->save();
         /* (error_log($data)); */
-        /* return redirect()->back(); */
+        return redirect()->back();
     }
 
     /* if ($result) {

@@ -74,8 +74,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
-        <form method="post" enctype="multipart/form-data">
-          <!--  action="{{url('uploadfile')}}" -->
+        <form action="{{url('uploadfile')}}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
             <label for="subject">Select the subject:</label>
