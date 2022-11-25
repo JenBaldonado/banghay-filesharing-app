@@ -85,8 +85,8 @@
 <!-- ----------------------------IMAGE-BUTTON OVERLAY---------------------------- -->
             <div class="hero-overlay justify-content-center container">
                 <img src="../img/HighResolutionLogo-TransparentBackground.png" class="overlay-img"/>
-                <h1>LOREM IPSUM</h1>
-                <h1>LOREM IPSUM</h1>
+                <h1><strong>FOR TEACHERS</strong></h1>
+                <h1><strong>BY TEACHERS</strong></h1>
                 <button type="button" name="join" id="join" data-bs-toggle="modal" data-bs-target="#register-modal">JOIN FREE</button>
             </div>
     </div>
