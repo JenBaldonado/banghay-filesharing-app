@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
 <!-- <p>{{session('mssg')}}</p>
  -->
 <div class="card-container text-center">
-  <div class="card-item">
+  <div class="card-item shadow">
     <a href="{{url('/banghay/gradeone')}}" type="button">
       <img src="img/G1.png" alt="">
       <p class="fw-bolder"><span class="code">&lt;</span>
@@ -77,8 +77,8 @@
         <form action="{{url('uploadfile')}}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
-            <label for="subject">Select the subject:</label>
-            <select title="subject" name="subject" id="subject" class="subject-select form-control">
+            <label for="subject" class="form-label">Select the subject:</label>
+            <select title="subject" name="subject" id="subject" class="subject-select form-control form-select shadow">
               <option selected value="Math">
                 Math
               </option>
@@ -118,8 +118,8 @@
 
             </select>
 
-            <label for="gradelevel">Select the grade level:</label>
-            <select name="gradelevel" title="gradelevel" id="gradelevel" class="gradelevel-select form-control">
+            <label for="gradelevel" class="form-label">Select the grade level:</label>
+            <select name="gradelevel" title="gradelevel" id="gradelevel" class="gradelevel-select form-control form-select shadow">
               <option selected value="Grade 1">
                 Grade 1
               </option>
@@ -143,14 +143,14 @@
           </fieldset>
 
           <fieldset>
-            <label>Write the title:</label>
-            <input type="text" name="name" placeholder="A Detailed Lesson Plan In Math 4" class="form-control" required />
-            <label>choose your file:</label>
-            <input type="file" name="file" class="form-control @error('file') is-invalid @enderror">
+            <label class="form-label">Write the title:</label>
+            <input type="text" name="name" id="text" placeholder="A Detailed Lesson Plan In Math 4" class="form-control shadow" required />
+            <label class="form-label">choose your file:</label>
+            <input type="file" name="file"  class="form-control @error('file') is-invalid @enderror shadow">
             @error('file')
             <div class="invalid-feedback">{{ $message }} </div>
             @enderror
-            <input type="submit" value="Upload" id="upload" class="upload">
+            <input type="submit" value="Upload" id="upload" class="upload shadow">
           </fieldset>
 
         </form>

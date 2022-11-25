@@ -22,12 +22,12 @@
 
 </head>
 
-<body>
+<body class="modal-open">
     <nav class="sidebar close">
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="img/logo.png" alt="">
+                    <img src="../img/HghResLogo.png" alt="">
                 </span>
 
                 <div class="text logo-text">

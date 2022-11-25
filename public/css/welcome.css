@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&family=Poppins&display=swap');
+
+:root{
+    --primary-color: #D9D9D9;
+    --secondary-color: #32DEE0;
+    --tertiary-color: #0086DF;
+    --btn-hover-bg: #81ecec;
+    --btn-hover-border: #00cec9;
+    --text-color: #f1f1f1;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    color:var(--text-color);
+}
+
+html,body{
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+
+/*-----------------------------------------LOGIN -----------------------------------------*/
+
+.modal-content{
+    background-color: rgba(101, 165, 207, 0.90);
+}
+
+.login-logo{
+    width:100%;
+    height:100%;
+}
+
+.nav-link{
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.modal-open, body {
+    padding-right: 0 !important;
+}
+
+.overlay-contianer{
+    background-image: url(../img/G2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width:100%;
+    height:130vh;
+    
+}
+
+
+.overlay-nav {
+    position:absolute;
+    top: 0.625em;
+    padding-right: 3em;
+    background:rgba(101, 165, 207, 0.75);
+    background-clip: content-box;
+    width: 100%;
+    color:var(--text-color);
+    z-index: 1;
+    
+}
+
+.hero-overlay{
+    position:relative;
+    display:inline-block;
+    top:5.81em;
+    left: 3.13em;
+    z-index: 0;
+}
+
+@media screen and (max-width: 600px) {
+
+    .overlay-contianer{
+        height:130vh;
+        
+    }
+    .hero-overlay{
+        top:10em;
+        left: 3.12em;
+        height: 78em;
+        width: 80em;
+        
+    
+    }
+    .overlay-img{
+        width: 50%;
+        height: 50%;
+        
+    }
+    .overlay-nav{
+        padding-right: 0;
+    }
+
+    .logo-col{
+        display:none;
+    }
+    
+}
+
+.overlay-img{
+    width: 20%;
+    height: 20%;
+}
+
+
+
+#join{
+    padding: 0.6250em 0em;
+    width: 6em;
+    background-color: var(--tertiary-color);
+    border: 2px solid var(--tertiary-color);
+    color: var(--text-color);;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline;
+    transition: 1s;
+}
+
+#join:hover, #share-btn:hover{
+    background: var(--btn-hover-bg);
+    border: 2px solid var(--btn-hover-border);
+}
+
+
+
+/*--------------------------MAIN------------------------*/
+
+body{
+    background-color: var(--tertiary-color);
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    max-width: 920px;
+    object-fit: cover;
+    gap: 16px;
+}
+
+.card-item {
+    border:none;
+    border-radius: 6px;
+    background-color:var(--secondary-color);
+    box-shadow: 1px -1px 12px 0 rgba(58,59,69);
+    height: 16rem;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    height: 12rem;
+    width: 12rem;
+    margin: 5px;
+    object-fit: cover;
+}
+
+p {
+    padding-top: 15px;
+}
+
+.share-container {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#share-btn{
+    padding: 0.6250em 4.375em;
+    margin: 1.2500em 0 auto;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    box-shadow: 1px -1px 12px 0 rgba(58,59,69);
+    color: var(--text-color);;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline;
+    transition: 1s;
+}
+
+iframe{
+    border-radius: 16px;
+    margin: auto auto;
+    display: flex;
+}
+
+
+footer{
+    background-color: var(--primary-color);
+    padding-bottom:10px;
+}
+
+footer p{
+    color:rgb(83, 81, 81);
+    justify-content: center;
+    display: flex;
+}
+
+.socials{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    
+}
+
+.socials .icon{
+    color:var(--tertiary-color);
+    font-size: 2em;
+    border-radius: 6px;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: space-evenly;
+}
