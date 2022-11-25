@@ -13,7 +13,7 @@
       </p>
     </a>
   </div>
-  <div class="card-item">
+  <div class="card-item shadow">
     <a href="{{url('/banghay/gradetwo')}}" type="button">
       <img src="img/G2.jpg" alt="">
       <p class="fw-bolder"><span class="code">&lt;</span>
@@ -22,7 +22,7 @@
       </p>
     </a>
   </div>
-  <div class="card-item">
+  <div class="card-item shadow">
     <a href="{{url('/banghay/gradethree')}}" type="button">
       <img src="img/G3.jpg" alt="">
       <p class="fw-bolder"><span class="code">&lt;</span>
@@ -32,7 +32,7 @@
     </a>
   </div>
 
-  <div class="card-item">
+  <div class="card-item shadow">
     <a href="{{url('/banghay/gradefour')}}" type="button">
       <img src="img/G4.jpg" alt="">
       <p class="fw-bolder"><span class="code">&lt;</span>
@@ -41,7 +41,7 @@
       </p>
     </a>
   </div>
-  <div class="card-item">
+  <div class="card-item shadow">
     <a href="{{url('/banghay/gradefive')}}" type="button">
       <img src="img/G5.jpg" alt="">
       <p class="fw-bolder"><span class="code">&lt;</span>
@@ -50,7 +50,7 @@
       </p>
     </a>
   </div>
-  <div class="card-item">
+  <div class="card-item shadow">
     <a href="{{url('/banghay/gradesix')}}" type="button">
       <img src="img/G6.jpg" alt="">
       <p class="fw-bolder"><span class="code">&lt;</span>
