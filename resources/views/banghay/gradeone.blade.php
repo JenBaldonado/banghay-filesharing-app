@@ -74,6 +74,7 @@
             <div>Tittle: {{$data->name}}</div>
             <div>Subject: {{$data->subject}}</div>
             <div>Grade Level: {{$data->gradelevel}}</div>
+            <div>Shared by: {{$data->user}}</div>
             <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
             <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
