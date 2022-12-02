@@ -14,7 +14,6 @@ use App\Http\Controllers\BanghayController;
 |
 */
 
-/* Route::get('/', function () {return view('welcome');})->middleware('auth'); */
 
 Route::get('/', [BanghayController::class, 'index'])->middleware('auth');
 Route::post('/uploadfile', [BanghayController::class, 'store'])->middleware('auth');
@@ -33,5 +32,3 @@ Route::get('/banghay/gradesix', [BanghayController::class, 'gradesix'])->middlew
 
 Auth::routes();
 
-/* Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- */

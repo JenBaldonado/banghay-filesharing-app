@@ -180,16 +180,3 @@
   </div>
 </div>
 @endsection
-
-<!-- @section('scripts')
-
-<script>
-  $(document).ready(function() {
-    $(document).on('click', 'upload', function(e) {
-      e.preventDefault();
-      console.log('hello')
-    })
-  })
-</script>
-
-@endsection -->

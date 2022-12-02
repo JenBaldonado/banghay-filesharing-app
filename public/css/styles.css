@@ -17,6 +17,11 @@
     padding: 0;
 }
 
+html,body{
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: "Oswald", sans-serif;
     justify-content: center;
@@ -221,3 +226,6 @@ input[type="file"]::file-selector-button {
 /*-----------------------------------------END OF UPLOAD WINDOW-----------------------------------------*/
 
 
+.modal-open, body {
+    padding-right: 0 !important;
+}

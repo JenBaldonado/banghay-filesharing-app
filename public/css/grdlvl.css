@@ -35,6 +35,11 @@
     --tran-05: all 0.3s ease;
 }
 
+html,body{
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body{
     min-height: 100vh;
     background-color: var(--body-color);
@@ -407,7 +412,7 @@ hr{
 
 iframe{
     width:100%;
-    height: 100%;
+    height: 80vh;
 }
 
 

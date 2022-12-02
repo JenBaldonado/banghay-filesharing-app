@@ -67,7 +67,13 @@
                                                             {{ __('Login') }}
                                                         </button>
                                                     </div>
-                                                </div>     
+                                                    <div class="col-md-8 mt-2 justify-content-center">
+                                                        <a href="" data-bs-toggle="modal" data-bs-target="#register-modal">
+                                                            Not a member yet?
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                    
                                             </form>
                                         </div> 
                                         <div class="col logo-col">
