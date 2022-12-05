@@ -3,7 +3,7 @@
 @section('content')
 <!-- ----------------------------LOGIN MODAL---------------------------- -->
 <div class="modal fade" id="login-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg modal-sm">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-sm modal-xs">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="login-modal">{{ __('Login') }}</h1>
@@ -12,7 +12,7 @@
             <div class="modal-body">
                                     <div class="row">
                                         <div class="col my-auto">
-                                            <form method="POST" action="{{ route('login') }}">
+                                            <form  method="POST" action="{{ route('login') }}">
                                                 @csrf
                                                 <div class="row mb-3">
                                                     <label for="email" class="col-form-label">{{ __('Email Address') }}</label>
@@ -77,7 +77,7 @@
                                             </form>
                                         </div> 
                                         <div class="col logo-col">
-                                            <img src="../img/HighResolutionLogo-TransparentBackground.png" alt="" class="m-auto login-logo">
+                                            <img src="../img/HighResolutionLogo-TransparentBackground.png" alt="" class="m-auto login-logo float-end">
                                         </div>
                                     </div>
                                 </div>
@@ -91,14 +91,14 @@
 </div>
 
 <!-- ----------------------------REGISTER MODAL---------------------------- -->
-<div class="modal fade" id="register-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="register-modal" data-bs-backdrop="static" data-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="register-modal">{{ __('Register') }}</h1>
+                <h1 class="modal-title fs-5" id="register-modal-label">{{ __('Register') }}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div id="TheBodyContent" class="modal-body">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <form method="POST" action="{{ route('register') }}">
@@ -122,7 +122,7 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address:') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    <input id="reg-email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -136,7 +136,7 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password:') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                    <input id="reg-password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -172,12 +172,9 @@
 
 
 <!-- ----------------------------MAIN---------------------------- -->
-<div class="container newsletter">
-    <iframe class="w-100 m-2" height=200 src="https://mb.com.ph/2022/11/21/deped-to-roll-out-a-learning-recovery-plan/">
-    </iframe>
-    <iframe class="w-100 m-2" height=200 src="https://mb.com.ph/2022/11/20/amid-economic-crisis-teachers-call-on-govt-for-urgent-relief-measures/">
-    </iframe>
-</div>
+<div class="text-center m-5"><h1>NEWSLETTER</h1></div>
+<div class="newsletter" id="article"></div>
+<div class="newsletter" id="example"></div>
 
 <div class="container my-5">
     <div class="card-container text-center">
@@ -254,3 +251,4 @@
 </footer>
 
 @endsection
+

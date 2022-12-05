@@ -21,10 +21,11 @@
 
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet" type="text/css">
 
-
     <!-- Scripts -->
     @viteReactRefresh
+    @viteReactRefresh
     @vite(['resources/js/app.js'])
+    
 </head>
 
 <body class="modal-open">
@@ -33,7 +34,7 @@
 <!-- ----------------------------NAVIGATION BAR---------------------------- -->        
             <nav class="navbar navbar-expand-md">
                 <div class="overlay-nav">
-                    <button class="navbar-toggler my-2 ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <button class="navbar-toggler my-2 ms-1 float-end me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -84,10 +85,54 @@
         
 <!-- ----------------------------IMAGE-BUTTON OVERLAY---------------------------- -->
             <div class="hero-overlay justify-content-center container">
-                <img src="../img/HighResolutionLogo-TransparentBackground.png" class="overlay-img"/>
-                <h1><strong>FOR TEACHERS</strong></h1>
-                <h1><strong>BY TEACHERS</strong></h1>
-                <button type="button" name="join" id="join" data-bs-toggle="modal" data-bs-target="#register-modal">JOIN FREE</button>
+                <div class="row">
+                    
+                    <div class="col">
+                        <img src="../img/HighResolutionLogo-TransparentBackground.png" class="overlay-img"/>
+                        <h1><strong>FOR TEACHERS</strong></h1>
+                        <h1><strong>BY TEACHERS</strong></h1>
+                        <button type="button" name="join" id="join" data-bs-toggle="modal" data-bs-target="#register-modal">JOIN FREE</button>
+                    </div>
+                    <div class="col text-danger">
+                        @if (Route::has('register'))
+                            @error('name')
+                                <div class="container mx-3">
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                </div>
+                            @enderror
+                            @error('email')
+                                <div class="container mx-3">
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                </div>
+                            @enderror
+                            @error('password')
+                                <div class="container mx-3">
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                </div>
+                            @enderror
+                        @endif
+
+                        @if (Route::has('login'))
+                            @error('name')
+                                <div class="container mx-3">
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                </div>
+                            @enderror
+                            @error('email')
+                                <div class="container mx-3">
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                </div>
+                            @enderror
+                            @error('password')
+                                <div class="container mx-3">
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                </div>
+                            @enderror
+                        @endif
+            
+                    </div>
+                </div>
+                
             </div>
     </div>
 

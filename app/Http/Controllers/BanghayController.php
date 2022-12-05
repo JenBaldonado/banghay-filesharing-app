@@ -28,7 +28,7 @@ class BanghayController extends Controller
 
         if($request->file()){
             $filename = 'banghay' . '_' . $file->getClientOriginalName();
-            $request->file->move(public_path('uploads'), $filename);
+            $request->file->move(storage_path('app/public/uploads'), $filename);
             $data->file = $filename;
             $data->name = $request->name;
             $data->gradelevel = $request->gradelevel;
