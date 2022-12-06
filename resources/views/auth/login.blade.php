@@ -172,9 +172,9 @@
 
 
 <!-- ----------------------------MAIN---------------------------- -->
-<div class="text-center m-5"><h1>NEWSLETTER</h1></div>
-<div class="newsletter" id="article"></div>
-<div class="newsletter" id="example"></div>
+<div class="text-center m-5"><h1>Updates on Education</h1></div>
+<div class="conatiner text-justify mx-5" id="article"></div>
+
 
 <div class="container my-5">
     <div class="card-container text-center">
