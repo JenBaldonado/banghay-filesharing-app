@@ -1,8 +1,21 @@
-@extends('layouts.layout')
+@extends('layouts.reg')
 
 @section('content')
 
 
-<iframe src="/uploads/{{$data->file}}"></iframe>
+<div class="modal-body text-center">
+        <form action="{{url('uploadfile')}}" method="post" enctype="multipart/form-data">
+          @csrf
+          
+            <label for="file">Choose a image file:</label>
+            <input type="file" name="file" class="upload-file form-control @error('file') is-invalid @enderror">
+            @error('file')
+            <div class="invalid-feedback">{{ $message }} </div>
+            @enderror
+            <input type="submit" value="Upload" id="upload" class="upload">
+            
+          </fieldset>
+
+        </form>
 
 @endsection

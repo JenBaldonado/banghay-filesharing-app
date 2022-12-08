@@ -27,7 +27,11 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="../img/HghResLogo.png" alt="">
+                    @foreach($datas as $data)
+                    @if($data->file == 'banghay_HighResolutionLogo-TransparentBackground.png')
+                    <img class="subject-bg" src="{{ asset('/uploads/' . $data->file) }}" alt="image">
+                    @endif
+                    @endforeach
                 </span>
 
                 <div class="text logo-text">
@@ -132,30 +136,16 @@
 
     </nav>
 
-    <body>
-
-        <main class="home">
-            @yield('content')
-        </main>
-        </div>
-
-        <script>
-            const body = document.querySelector('body'),
-                sidebar = body.querySelector('nav'),
-                toggle = body.querySelector(".toggle"),
-                searchBtn = body.querySelector(".search-box"),
-                modeSwitch = body.querySelector(".toggle-switch"),
-                modeText = body.querySelector(".mode-text");
+    <main class="home">
+        @yield('content')
+    </main>
 
 
-            toggle.addEventListener("click", () => {
-                sidebar.classList.toggle("close");
-            })
 
-            searchBtn.addEventListener("click", () => {
-                sidebar.classList.remove("close");
-            })
-        </script>
-    </body>
+
+    @yield('script')
+
+
+</body>
 
 </html>

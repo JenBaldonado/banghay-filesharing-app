@@ -37,7 +37,7 @@ function App(){
      return (
         <div>
             {articles.slice(0,2).map((post) => (
-              <div key={post.id} className="card my-3">
+              <div key={post.id} className="card w-100 m-2">
                 <h1 className="p-2 text-black">{post.title}</h1>
                 <a className="p-2" href={post.url} target="_blank">Read more ...</a>
               </div>

@@ -9,7 +9,7 @@
 
 :root{
     /* ------ Colors ----- */
-    --body-color: #FFF;
+    --body-color: #F1F1F1;
     --sidebar-color: #FFF;
     --primary-color: #0086DF;
     --primary-color-light: #F6F5FF;
@@ -426,4 +426,31 @@ a{
 
 a:hover:{
     color:var(--primary-color);
+}
+
+footer{
+    background-color: var(--text-color-body);
+    padding-bottom:10px;
+}
+
+footer p{
+    color: var(--primary-color-light);
+    justify-content: center;
+    display: flex;
+}
+
+.socials{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    
+}
+
+.socials .icon{
+    color: var(--primary-color-light);
+    font-size: 2em;
+    border-radius: 6px;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: space-evenly;
 }

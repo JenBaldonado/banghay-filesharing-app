@@ -26,15 +26,27 @@ body {
     font-family: "Oswald", sans-serif;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(
+   /*  background: linear-gradient(
             rgba(255, 255, 255, 0.5),
             rgba(255, 255, 255, 0.5)
         ),
         url(../img/HighResolutionLogo-TransparentBackground.png); /*https://stackoverflow.com/questions/4997493/set-opacity-of-background-image-without-affecting-child-elements*/
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-position:calc(100% + 16em) calc(100% - -15.9em);
-    background-size: 40em 40em;
+    background-size: 40em 40em; */
 } 
+
+
+.subject-bg{
+    position:fixed;
+    top:20em;
+    right:-15.9em;
+    opacity: 0.5;
+    height:40em;
+    width:40em;
+    object-fit:cover;
+    z-index: -1;
+}
 /*--------------------------------------MAIN WINDOW----------------------------------------*/
 
 .navbar{
@@ -78,8 +90,11 @@ body {
     border: 2px solid var(--secondary-color);
     height: 16rem;
     padding: 10px;
+    border-radius: 6px;
 }
-
+.card-item:hover{
+    background-color: var(--secondary-color) ;
+}
 a {
     text-decoration: none;
     color: #000;
@@ -229,3 +244,6 @@ input[type="file"]::file-selector-button {
 .modal-open, body {
     padding-right: 0 !important;
 }
+
+
+

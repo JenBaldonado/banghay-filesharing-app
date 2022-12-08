@@ -12,29 +12,45 @@ class BanghayController extends Controller
 {
     public function index()
     {
-        
-        return view('banghay.subjects');
+        $datas = Banghay::all();
+
+        return view('banghay.subjects',compact('datas'));
     }
+
+    public function welcome()
+    {
+        $datas = Banghay::all();
+
+       
+
+        return view('welcome', compact('datas'));
+    }
+
+    public function show()
+    {
+        
+        $datas = Banghay::all();
+
+        return view('banghay.displaysubjects', compact('datas'));
+    }
+
+   
 
     public function store(Request $request)
     {
-        $validator = $request->validate([
-            'name' => 'required|max:255',
-            'file' => 'required|mimes:pdf|max:2048',
+        $request->validate([
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $file = $request->file;
-        $data = new Banghay();
+        $datas = new Banghay();
 
         if($request->file()){
             $filename = 'banghay' . '_' . $file->getClientOriginalName();
-            $request->file->move(storage_path('app/public/uploads'), $filename);
-            $data->file = $filename;
-            $data->name = $request->name;
-            $data->gradelevel = $request->gradelevel;
-            $data->subject = $request->subject;
+            $request->file->move(public_path('/uploads'), $filename);
+            $datas->file = $filename;
 
-            $data->save();
+            $datas->save();
             return back()->with('success', 'Success! The file has been uploaded to your chosen grade level page.');
         };
         
@@ -47,18 +63,11 @@ class BanghayController extends Controller
         return response()->download(public_path('uploads/' . $file));
     }
 
-    public function preview($id)
-    {
-        $data = Banghay::find($id);
-
-        return view('banghay.displaysubjects', compact('data'));
-    }
-
 
     public function gradeone()
     {
-        $datas = Banghay::where('gradelevel', 'Grade 1')->orderBy('created_at', 'DESC')->get();
-
+        $datas = Banghay::all();
+     
         return view('banghay.gradeone', compact('datas'));
     }
 

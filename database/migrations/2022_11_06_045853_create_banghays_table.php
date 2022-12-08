@@ -15,9 +15,6 @@ return new class extends Migration
     {
         Schema::create('banghays', function (Blueprint $table) {
             $table->id();
-            $table->string('gradelevel');
-            $table->string('subject');
-            $table->string('name');
             $table->string('file');
             $table->timestamps();
         });

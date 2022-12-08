@@ -2,10 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banghay</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banghay</title>
 
     <!-- CSS -->
     <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-expand-md shadow fixed-top modal-open">
         <div class="container me-0">
-            <a class="navbar-brand" href="{{ url('/banghay') }}">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -70,12 +70,24 @@
         </div>
     </nav>
 
-  <main class="py-5 mt-5">
-    @yield('content')
-  </main>
+    <main class="py-5 mt-5">
+        @yield('content')
+    </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+   
 
+
+  <!--   <footer>
+        <p>Copyright @ 2022</p>
+        <p>Socials</p>
+        <div class="container socials">
+            <i class='bx bxl-facebook-square icon'></i>
+            <i class='bx bxl-linkedin-square icon'></i>
+            <i class='bx bxl-youtube icon'></i>
+        </div>
+    </footer> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+   
 
 </body>
 

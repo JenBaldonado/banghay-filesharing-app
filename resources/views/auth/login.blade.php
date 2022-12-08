@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
 @section('content')
 <!-- ----------------------------LOGIN MODAL---------------------------- -->
@@ -10,84 +10,84 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col my-auto">
-                                            <form  method="POST" action="{{ route('login') }}">
-                                                @csrf
-                                                <div class="row mb-3">
-                                                    <label for="email" class="col-form-label">{{ __('Email Address') }}</label>
+                <div class="row">
+                    <div class="col my-auto">
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="row mb-3">
+                                <label for="email" class="col-form-label">{{ __('Email Address') }}</label>
 
-                                                    <div class="col">
-                                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <div class="col">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                                        @error('email')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <label for="password" class="col-form-label">{{ __('Password') }}</label>
-
-                                                    <div class="col">
-                                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                                        @error('password')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3 d-flex justify-content-between">
-                                                    <div class="col">
-                                                        <div class="form-check mt-2">
-                                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                                            <label class="form-check-label" for="remember">
-                                                                {{ __('Remember Me') }}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col ps-4 pe-0 me-0">
-                                                        @if (Route::has('password.request'))
-                                                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                                {{ __('Forgot Password?') }}
-                                                            </a>
-                                                        @endif
-                                                    </div>                         
-                                                </div>                     
-
-                                                <div class="row mb-0">
-                                                    <div class="col-md-8 justify-content-center">
-                                                        <button type="submit" class="btn btn-primary">
-                                                            {{ __('Login') }}
-                                                        </button>
-                                                    </div>
-                                                    <div class="col-md-8 mt-2 justify-content-center">
-                                                        <a href="" data-bs-toggle="modal" data-bs-target="#register-modal">
-                                                            Not a member yet?
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                    
-                                            </form>
-                                        </div> 
-                                        <div class="col logo-col">
-                                            <img src="../img/HighResolutionLogo-TransparentBackground.png" alt="" class="m-auto login-logo float-end">
-                                        </div>
-                                    </div>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="row">
+                                <label for="password" class="col-form-label">{{ __('Password') }}</label>
+
+                                <div class="col">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 d-flex justify-content-between">
+                                <div class="col">
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                        <label class="form-check-label" for="remember">
+                                            {{ __('Remember Me') }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col ps-4 pe-0 me-0">
+                                    @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Password?') }}
+                                    </a>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="row mb-0">
+                                <div class="col-md-8 justify-content-center">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Login') }}
+                                    </button>
+                                </div>
+                                <div class="col-md-8 mt-2 justify-content-center">
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#register-modal">
+                                        Not a member yet?
+                                    </a>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col logo-col">
+                        <img src="../img/HighResolutionLogo-TransparentBackground.png" alt="" class="m-auto login-logo float-end">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <!-- ----------------------------REGISTER MODAL---------------------------- -->
@@ -111,9 +111,9 @@
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                     @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                             </div>
@@ -125,9 +125,9 @@
                                     <input id="reg-email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                     @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                             </div>
@@ -139,9 +139,9 @@
                                     <input id="reg-password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                     @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                             </div>
@@ -172,83 +172,74 @@
 
 
 <!-- ----------------------------MAIN---------------------------- -->
-<div class="text-center m-5"><h1>Updates on Education</h1></div>
-<div class="conatiner text-justify mx-5" id="article"></div>
+<div class="newsletter-h1">
+    <h1>Updates on Education</h1>
+</div>
+<div class="conatiner text-justify mx-5 news newsletter" id="article"></div>
 
 
 <div class="container my-5">
     <div class="card-container text-center">
-    <div class="card-item">
-        <a href="{{url('/banghay/gradeone')}}" type="button">
-        <img src="img/G1.png" alt="">
-        <p class="fw-bolder"><span class="code">&lt;</span>
-            Grade 1
-            <span class="code">&#47;&gt;</span>
-        </p>
-        </a>
-    </div>
-    <div class="card-item">
-        <a href="{{url('/banghay/gradetwo')}}" type="button">
-        <img src="img/G2.jpg" alt="">
-        <p class="fw-bolder"><span class="code">&lt;</span>
-            Grade 2
-            <span class="code">&#47;&gt;</span>
-        </p>
-        </a>
-    </div>
-    <div class="card-item">
-        <a href="{{url('/banghay/gradethree')}}" type="button">
-        <img src="img/G3.jpg" alt="">
-        <p class="fw-bolder"><span class="code">&lt;</span>
-            Grade 3
-            <span class="code">&#47;&gt;</span>
-        </p>
-        </a>
-    </div>
+        <div class="card-item">
+            <a href="{{url('/banghay/gradeone')}}" type="button">
+                <img src="img/G1.png" alt="">
+                <p class="fw-bolder"><span class="code">&lt;</span>
+                    Grade 1
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+        </div>
+        <div class="card-item">
+            <a href="{{url('/banghay/gradetwo')}}" type="button">
+                <img src="img/G2.jpg" alt="">
+                <p class="fw-bolder"><span class="code">&lt;</span>
+                    Grade 2
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+        </div>
+        <div class="card-item">
+            <a href="{{url('/banghay/gradethree')}}" type="button">
+                <img src="img/G3.jpg" alt="">
+                <p class="fw-bolder"><span class="code">&lt;</span>
+                    Grade 3
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+        </div>
 
-    <div class="card-item">
-        <a href="{{url('/banghay/gradefour')}}" type="button">
-        <img src="img/G4.jpg" alt="">
-        <p class="fw-bolder"><span class="code">&lt;</span>
-            Grade 4
-            <span class="code">&#47;&gt;</span>
-        </p>
-        </a>
-    </div>
-    <div class="card-item">
-        <a href="{{url('/banghay/gradefive')}}" type="button">
-        <img src="img/G5.jpg" alt="">
-        <p class="fw-bolder"><span class="code">&lt;</span>
-            Grade 5
-            <span class="code">&#47;&gt;</span>
-        </p>
-        </a>
-    </div>
-    <div class="card-item">
-        <a href="{{url('/banghay/gradesix')}}" type="button">
-        <img src="img/G6.jpg" alt="">
-        <p class="fw-bolder"><span class="code">&lt;</span>
-            Grade 6
-            <span class="code">&#47;&gt;</span>
-        </p>
-        </a>
-    </div>
+        <div class="card-item">
+            <a href="{{url('/banghay/gradefour')}}" type="button">
+                <img src="img/G4.jpg" alt="">
+                <p class="fw-bolder"><span class="code">&lt;</span>
+                    Grade 4
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+        </div>
+        <div class="card-item">
+            <a href="{{url('/banghay/gradefive')}}" type="button">
+                <img src="img/G5.jpg" alt="">
+                <p class="fw-bolder"><span class="code">&lt;</span>
+                    Grade 5
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+        </div>
+        <div class="card-item">
+            <a href="{{url('/banghay/gradesix')}}" type="button">
+                <img src="img/G6.jpg" alt="">
+                <p class="fw-bolder"><span class="code">&lt;</span>
+                    Grade 6
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+        </div>
     </div>
     <div class="share-container">
-    <button type="button" name="share-button" id="share-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share your work</button>
+        <button type="button" name="share-button" id="share-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share your work</button>
     </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-        <p>Copyright @ 2022</p>
-        <p>Socials</p>
-        <div class="container socials">
-            <i class='bx bxl-facebook-square icon' ></i>
-            <i class='bx bxl-linkedin-square icon' ></i>
-            <i class='bx bxl-youtube icon' ></i>
-        </div>
-</footer>
 
 @endsection
-

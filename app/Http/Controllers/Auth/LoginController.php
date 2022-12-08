@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use App\Models\Banghay;
+
 class LoginController extends Controller
 {
     /*
@@ -37,4 +39,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function images()
+    {
+        $datas = Banghay::all();
+
+        return view('auth.login',compact('datas'));
+    }
+
+
 }
+
