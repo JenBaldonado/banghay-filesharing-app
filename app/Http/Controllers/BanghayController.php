@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Stroage;
+use Illuminate\Support\Facades\Storage;
 //use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 use App\Models\Banghay;
@@ -17,29 +17,12 @@ class BanghayController extends Controller
         return view('banghay.subjects',compact('datas'));
     }
 
-    public function welcome()
-    {
-        $datas = Banghay::all();
 
-       
-
-        return view('welcome', compact('datas'));
-    }
-
-    public function show()
-    {
-        
-        $datas = Banghay::all();
-
-        return view('banghay.displaysubjects', compact('datas'));
-    }
-
-   
 
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'file' => 'required|mimes:pdf|max:2048',
         ]);
 
         $file = $request->file;
