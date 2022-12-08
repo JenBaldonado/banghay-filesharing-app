@@ -79,7 +79,7 @@
                     <div class="col logo-col">
                         @foreach($datas as $data)
                         @if($data->file == 'banghay_HighResolutionLogo-TransparentBackground.png')
-                        <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
+                        <img class="login-logo" src="{{ asset('/uploads/' . $data->file) }}" alt="image">
                         @endif
                         @endforeach
                     </div>
