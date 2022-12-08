@@ -36,7 +36,7 @@ main{
 .login-logo{
     height: 20em;
     width: 20em;
-    margin: auto;
+    /* margin: auto; */
     justify-content: center;
     align-items: center;
 }
