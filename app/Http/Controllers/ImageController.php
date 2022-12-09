@@ -8,22 +8,15 @@ use Illuminate\Http\Request;
 class ImageController extends Controller
 {
 
-    public function index()
-    {
-        $datas = Image::all();
-
-        return view('banghay.subjects',compact('datas'));
-    }
-
    
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'images' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
 
-        $file = $request->file;
+        $file = $request->images;
         $datas = new Image();
 
         $filename = 'banghay' . '_' . $file->getClientOriginalName();

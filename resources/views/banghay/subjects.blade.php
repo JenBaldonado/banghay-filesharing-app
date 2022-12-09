@@ -2,111 +2,81 @@
 
 @section('content')
 
-@foreach($datas as $data)
-@if($data->file == 'banghay_HighResolutionLogo-TransparentBackground.png')
-<img class="subject-bg" src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-@endif
-@endforeach
-
 <div class="card-container text-center">
 
   @if($message = Session::get('success'))
-  <div class="container mx-3">
-    <div class="alert alert-success">{{$message}}</div>
-  </div>
-  @else
-  @error('file')
-  <div class="container mx-3">
-    <div class="alert alert-danger">{{ $message }}</div>
-  </div>
-  @enderror
-  @error('name')
-  <div class="container mx-3">
-    <div class="alert alert-danger">{{ $message }}</div>
-  </div>
-  @enderror
+    <div class="container mx-3">
+      <div class="alert alert-success">{{$message}}</div>
+    </div>
+    @else
+    @error('file')
+    <div class="container mx-3">
+      <div class="alert alert-danger">{{ $message }}</div>
+    </div>
+    @enderror
+    @error('name')
+    <div class="container mx-3">
+      <div class="alert alert-danger">{{ $message }}</div>
+    </div>
+    @enderror
   @endif
-
-
+  
   <div class="card-item">
     <a href="{{url('/banghay/gradeone')}}" type="button">
-      @foreach($datas as $data)
-      @if($data->file == 'banghay_G1.png')
-      <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-      @endif
-      @endforeach
-      <p class="fw-bolder">Grade 1</p>
+      <img src="img/G1.png" alt="">
+      <p class="fw-bolder"><span class="code">&lt;</span>
+        Grade 1
+        <span class="code">&#47;&gt;</span>
+      </p>
     </a>
   </div>
-
   <div class="card-item">
     <a href="{{url('/banghay/gradetwo')}}" type="button">
-      @foreach($datas as $data)
-      @if($data->file == 'banghay_G2.jpg')
-      <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-      @endif
-      @endforeach
-      <p class="fw-bolder">
+      <img src="img/G2.jpg" alt="">
+      <p class="fw-bolder"><span class="code">&lt;</span>
         Grade 2
-
+        <span class="code">&#47;&gt;</span>
       </p>
     </a>
   </div>
   <div class="card-item">
     <a href="{{url('/banghay/gradethree')}}" type="button">
-      @foreach($datas as $data)
-      @if($data->file == 'banghay_G3.jpg')
-      <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-      @endif
-      @endforeach
-      <p class="fw-bolder">
+      <img src="img/G3.jpg" alt="">
+      <p class="fw-bolder"><span class="code">&lt;</span>
         Grade 3
-
+        <span class="code">&#47;&gt;</span>
       </p>
     </a>
   </div>
 
   <div class="card-item">
     <a href="{{url('/banghay/gradefour')}}" type="button">
-      @foreach($datas as $data)
-      @if($data->file == 'banghay_G4.jpg')
-      <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-      @endif
-      @endforeach
-      <p class="fw-bolder">
+      <img src="img/G4.jpg" alt="">
+      <p class="fw-bolder"><span class="code">&lt;</span>
         Grade 4
-
+        <span class="code">&#47;&gt;</span>
       </p>
     </a>
   </div>
   <div class="card-item">
     <a href="{{url('/banghay/gradefive')}}" type="button">
-      @foreach($datas as $data)
-      @if($data->file == 'banghay_G5.jpg')
-      <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-      @endif
-      @endforeach
-      <p class="fw-bolder">
+      <img src="img/G5.jpg" alt="">
+      <p class="fw-bolder"><span class="code">&lt;</span>
         Grade 5
-
+        <span class="code">&#47;&gt;</span>
       </p>
     </a>
   </div>
   <div class="card-item">
     <a href="{{url('/banghay/gradesix')}}" type="button">
-      @foreach($datas as $data)
-      @if($data->file == 'banghay_G6.jpg')
-      <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-      @endif
-      @endforeach
-      <p class="fw-bolder">
+      <img src="img/G6.jpg" alt="">
+      <p class="fw-bolder"><span class="code">&lt;</span>
         Grade 6
-
+        <span class="code">&#47;&gt;</span>
       </p>
     </a>
   </div>
 </div>
-
 <div class="share-container">
   <button type="button" name="share-button" id="share-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Share your work</button>
 </div>
@@ -191,12 +161,12 @@
 
           <fieldset>
             <label for="name">Write the title:</label>
-            <input type="text" name="name" id="name" placeholder="A Detailed Lesson Plan In Math 4" class="form-control @error('name') is-invalid @enderror" />
+            <input type="text" name="name" id="name" placeholder="A Detailed Lesson Plan In Math 4" class="form-control @error('name') is-invalid @enderror"/>
             @error('name')
             <div class="invalid-feedback">{{ $message }} </div>
             @enderror
             <label for="file">Choose a pdf file:</label>
-            <input type="file" name="file" class="upload-file form-control @error('file') is-invalid @enderror">
+            <input type="file" name="file" class="form-control @error('file') is-invalid @enderror">
             @error('file')
             <div class="invalid-feedback">{{ $message }} </div>
             @enderror

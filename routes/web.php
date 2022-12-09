@@ -18,11 +18,11 @@ use App\Http\Controllers\ImageController;
 Route::get('/', [ImageController::class, 'welcome']);
 Route::post('/image', [ImageController::class, 'store'])->middleware('auth');
 Route::get('/show', [ImageController::class, 'show']);
-Route::get('/banghay', [ImageController::class, 'index'])->middleware('auth');
+/* Route::get('/banghay', [ImageController::class, 'index'])->middleware('auth'); */
 
 
 
-/* Route::get('/banghay', [BanghayController::class, 'index'])->middleware('auth'); */
+Route::get('/banghay', [BanghayController::class, 'index'])->middleware('auth');
 Route::post('/uploadfile', [BanghayController::class, 'store'])->middleware('auth');
 
 
