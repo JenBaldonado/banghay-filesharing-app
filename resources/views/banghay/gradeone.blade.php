@@ -65,73 +65,75 @@
 
     <h3 id="English" class="subject-text mt-5">English</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'English')
       <div class="card border-left-english shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle: </div>
-            <div>Subject: </div>
-            <div>Grade Level: </div>
-            <div>Shared by: </div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen modal-fullscreen-sm-down modal-fullscreen-xxl-down ">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">
-
+                {{$data->gradelevel}} {{$data->subject}}: {{$data->name}}
               </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
-              <iframe src=""></iframe>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="Math" class="subject-text mt-5">Math</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'Math')
       <div class="card border-left-math shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle: </div>
-            <div>Subject: </div>
-            <div>Grade Level: </div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
@@ -139,360 +141,345 @@
 
     <h3 id="Science" class="subject-text mt-5">Science</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'Science')
       <div class="card border-left-science shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle:</div>
-            <div>Subject: </div>
-            <div>Grade Level:</div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="ESP" class="subject-text mt-5">ESP</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'ESP')
       <div class="card border-left-esp shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle:</div>
-            <div>Subject:</div>
-            <div>Grade Level:</div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="AP" class="subject-text mt-5">Araling Panlipunan</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'Araling Panlipunan')
       <div class="card border-left-ap shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle:</div>
-            <div>Subject:</div>
-            <div>Grade Level:</div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="Computer" class="subject-text mt-5">Computer</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'Computer')
       <div class="card border-left-computer shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle:</div>
-            <div>Subject: </div>
-            <div>Grade Level:</div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="TLE" class="subject-text mt-5">TLE</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'TLE')
       <div class="card border-left-tle shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle: </div>
-            <div>Subject: </div>
-            <div>Grade Level: </div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="Music" class="subject-text mt-5">Music</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'Music')
       <div class="card border-left-music shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle:</div>
-            <div>Subject: </div>
-            <div>Grade Level: </div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="Arts" class="subject-text mt-5">Arts</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'Arts')
       <div class="card border-left-arts shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle: </div>
-            <div>Subject: </div>
-            <div>Grade Level: </div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="PE" class="subject-text mt-5">Physical Education</h3>
     <div class="card-flex-container card-text">
-
+      @foreach($datas as $data)
+      @if($data->subject == 'Physical Education')
       <div class="card border-left-pe shadow h-100 py-2">
         <div class="card-body">
           <div class="no-gutters align-items-center">
-            <div>Tittle: </div>
-            <div>Subject: </div>
-            <div>Grade Level: </div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
 
     <hr />
 
     <h3 id="Health" class="subject-text mt-5">Health</h3>
-    <div class="card-flex-container card-text mb-5">
-
+    <div class="card-flex-container card-text">
+      @foreach($datas as $data)
+      @if($data->subject == 'Health')
       <div class="card border-left-health shadow h-100 py-2">
         <div class="card-body .grdlvl">
           <div class="no-gutters align-items-center">
-            <div>Tittle: </div>
-            <div>Subject: </div>
-            <div>Grade Level: </div>
-            <a href="" data-bs-toggle="modal" data-bs-target="">View</a>
-            <a href="">Download</a>
+            <div>Tittle: {{$data->name}}</div>
+            <div>Subject: {{$data->subject}}</div>
+            <div>Grade Level: {{$data->gradelevel}}</div>
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{'view',$data->id}}">View</a>
+            <a href="{{url('/download', $data->file)}}">Download</a>
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal fade" id="{{'view',$data->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-sm-down">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Grade 1</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-              <h5>Tittle:</h5>
-              <h6>Subject:</h6>
-              <h6>Grade Level:</h6>
-              <iframe src=""></iframe>
+              <h5>Tittle:{{$data->name}}</h5>
+              <h6>Subject:{{$data->subject}}</h6>
+              <h6>Grade Level:{{$data->gradelevel}}</h6>
+              <iframe src="/uploads/{{$data->file}}"></iframe>
             </div>
           </div>
         </div>
       </div>
-
+      @endif
+      @endforeach
     </div>
-
   </div>
 
-
-  <footer>
-        <p>Copyright @ 2022</p>
-        <p>Socials</p>
-        <div class="container socials">
-            <i class='bx bxl-facebook-square icon'></i>
-            <i class='bx bxl-linkedin-square icon'></i>
-            <i class='bx bxl-youtube icon'></i>
-        </div>
-    </footer>
-  @endsection
-
-
-
-  @section('script')
-  <script>
-    const body = document.querySelector('body'),
-      sidebar = body.querySelector('nav'),
-      toggle = body.querySelector(".toggle"),
-      searchBtn = body.querySelector(".search-box"),
-      modeSwitch = body.querySelector(".toggle-switch"),
-      modeText = body.querySelector(".mode-text");
-
-
-    toggle.addEventListener("click", () => {
-      sidebar.classList.toggle("close");
-    })
-
-    searchBtn.addEventListener("click", () => {
-      sidebar.classList.remove("close");
-    })
-  </script>
-  @endsection
-
 </div>
+
+@endsection

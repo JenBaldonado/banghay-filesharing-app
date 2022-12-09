@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BanghayController;
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +13,7 @@ use App\Http\Controllers\BanghayController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [BanghayController::class, 'welcome']);
 Route::get('/banghay', [BanghayController::class, 'index'])->middleware('auth');
 Route::post('/uploadfile', [BanghayController::class, 'store'])->middleware('auth');
@@ -28,6 +27,6 @@ Route::get('/banghay/gradethree', [BanghayController::class, 'gradethree'])->mid
 Route::get('/banghay/gradefour', [BanghayController::class, 'gradefour'])->middleware('auth');
 Route::get('/banghay/gradefive', [BanghayController::class, 'gradefive'])->middleware('auth');
 Route::get('/banghay/gradesix', [BanghayController::class, 'gradesix'])->middleware('auth');
-
 Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-//use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 use App\Models\Banghay;
 
@@ -18,9 +17,8 @@ class BanghayController extends Controller
 
     public function welcome()
     {
-        $datas = Banghay::all();
 
-        return view('welcome', compact('datas'));
+        return view('welcome');
     }
 
     public function show()
@@ -45,6 +43,9 @@ class BanghayController extends Controller
             $filename = 'banghay' . '_' . $file->getClientOriginalName();
             $request->file->move(public_path('/uploads'), $filename);
             $datas->file = $filename;
+            $datas->name = $request->name;
+            $datas->gradelevel = $request->gradelevel;
+            $datas->subject = $request->subject;
 
             $datas->save();
             return back()->with('success', 'Success! The file has been uploaded to your chosen grade level page.');
@@ -62,7 +63,7 @@ class BanghayController extends Controller
 
     public function gradeone()
     {
-        $datas = Banghay::all();
+        $datas = Banghay::where('gradelevel', 'Grade 1')->orderBy('created_at', 'DESC')->get();
      
         return view('banghay.gradeone', compact('datas'));
     }

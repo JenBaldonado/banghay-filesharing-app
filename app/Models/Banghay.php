@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Banghay extends Model
 {
     use HasFactory;
-
-    protected $table = 'banghays';
+    protected $table = 'banghay';
 
     protected $fillable = [
         'file',
