@@ -12,11 +12,24 @@ class BanghayController extends Controller
 {
     public function index()
     {
-        $datas = Banghay::all();
 
-        return view('banghay.subjects',compact('datas'));
+        return view('banghay.subjects');
     }
 
+    public function welcome()
+    {
+        $datas = Banghay::all();
+
+        return view('welcome', compact('datas'));
+    }
+
+    public function show()
+    {
+
+        $datas = Banghay::all();
+
+        return view('banghay.displaysubjects', compact('datas'));
+    }
 
 
     public function store(Request $request)

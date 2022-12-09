@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BanghayController;
-use App\Http\Controllers\ImageController;
+
 
 
 /*
@@ -15,13 +15,7 @@ use App\Http\Controllers\ImageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [ImageController::class, 'welcome']);
-Route::post('/image', [ImageController::class, 'store'])->middleware('auth');
-Route::get('/show', [ImageController::class, 'show']);
-/* Route::get('/banghay', [ImageController::class, 'index'])->middleware('auth'); */
-
-
-
+Route::get('/', [BanghayController::class, 'welcome']);
 Route::get('/banghay', [BanghayController::class, 'index'])->middleware('auth');
 Route::post('/uploadfile', [BanghayController::class, 'store'])->middleware('auth');
 

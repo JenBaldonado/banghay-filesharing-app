@@ -29,11 +29,7 @@
 
 <body class="modal-open">
     <div class="overlay-contianer">
-        @foreach($datas as $data)
-        @if($data->file == 'banghay_G1.png')
-            <img class="overlay-bg" src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-        @endif
-        @endforeach
+            <img class="overlay-bg" src="img/G1.png" alt="image">
         <div id="app">
             <!-- ----------------------------NAVIGATION BAR---------------------------- -->
             <nav class="navbar navbar-expand-md">
@@ -90,11 +86,7 @@
             <!-- ----------------------------IMAGE-BUTTON OVERLAY---------------------------- -->
 
             <div class="overlay-img">
-            @foreach($datas as $data)
-            @if($data->file == 'banghay_HighResolutionLogo-TransparentBackground.png')
-                <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-            @endif
-            @endforeach
+                <img src="../img/HighResolutionLogo-TransparentBackground.png" alt="image">
             </div>
             <div class="hero-overlay justify-content-center container pb-4">
                 <h1 class="overlay-h1"><strong>FOR TEACHERS</strong></h1>
@@ -162,7 +154,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
     
 

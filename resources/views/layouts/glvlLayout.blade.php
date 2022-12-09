@@ -27,11 +27,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    @foreach($datas as $data)
-                    @if($data->file == 'banghay_HighResolutionLogo-TransparentBackground.png')
-                    <img class="subject-bg" src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                    @endif
-                    @endforeach
+                    <img class="subject-bg" src="/img/HighResolutionLogo-TransparentBackground.png" alt="image">
                 </span>
 
                 <div class="text logo-text">

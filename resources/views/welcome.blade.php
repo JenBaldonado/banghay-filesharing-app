@@ -77,11 +77,7 @@
                         </form>
                     </div>
                     <div class="col logo-col">
-                        @foreach($datas as $data)
-                        @if($data->file == 'banghay_HighResolutionLogo-TransparentBackground.png')
-                        <img class="login-logo" src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                        @endif
-                        @endforeach
+                        <img src="../img/HighResolutionLogo-TransparentBackground.png" alt="" class="m-auto login-logo float-end">
                     </div>
                 </div>
             </div>
@@ -180,12 +176,8 @@
 <div class="container my-5">
     <div class="card-container text-center">
         <div class="card-item">
-            <a href="{{ url('/banghay') }}" type="button">
-                @foreach($datas as $data)
-                @if($data->file == 'banghay_G1.png')
-                <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                @endif
-                @endforeach
+            <a href="{{url('/banghay/gradeone')}}" type="button">
+                <img src="img/G1.png" alt="">
                 <p class="fw-bolder"><span class="code">&lt;</span>
                     Grade 1
                     <span class="code">&#47;&gt;</span>
@@ -193,12 +185,8 @@
             </a>
         </div>
         <div class="card-item">
-            <a href="{{ url('/banghay') }}" type="button">
-                @foreach($datas as $data)
-                @if($data->file == 'banghay_G2.jpg')
-                <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                @endif
-                @endforeach
+            <a href="{{url('/banghay/gradetwo')}}" type="button">
+                <img src="img/G2.jpg" alt="">
                 <p class="fw-bolder"><span class="code">&lt;</span>
                     Grade 2
                     <span class="code">&#47;&gt;</span>
@@ -206,12 +194,8 @@
             </a>
         </div>
         <div class="card-item">
-            <a href="{{ url('/banghay') }}" type="button">
-                @foreach($datas as $data)
-                @if($data->file == 'banghay_G3.jpg')
-                <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                @endif
-                @endforeach
+            <a href="{{url('/banghay/gradethree')}}" type="button">
+                <img src="img/G3.jpg" alt="">
                 <p class="fw-bolder"><span class="code">&lt;</span>
                     Grade 3
                     <span class="code">&#47;&gt;</span>
@@ -220,12 +204,8 @@
         </div>
 
         <div class="card-item">
-            <a href="{{ url('/banghay') }}" type="button">
-                @foreach($datas as $data)
-                @if($data->file == 'banghay_G4.jpg')
-                <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                @endif
-                @endforeach
+            <a href="{{url('/banghay/gradefour')}}" type="button">
+                <img src="img/G4.jpg" alt="">
                 <p class="fw-bolder"><span class="code">&lt;</span>
                     Grade 4
                     <span class="code">&#47;&gt;</span>
@@ -233,12 +213,8 @@
             </a>
         </div>
         <div class="card-item">
-            <a href="{{ url('/banghay') }}" type="button">
-                @foreach($datas as $data)
-                @if($data->file == 'banghay_G5.jpg')
-                <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                @endif
-                @endforeach
+            <a href="{{url('/banghay/gradefive')}}" type="button">
+                <img src="img/G5.jpg" alt="">
                 <p class="fw-bolder"><span class="code">&lt;</span>
                     Grade 5
                     <span class="code">&#47;&gt;</span>
@@ -246,12 +222,8 @@
             </a>
         </div>
         <div class="card-item">
-            <a href="{{ url('/banghay') }}" type="button">
-                @foreach($datas as $data)
-                @if($data->file == 'banghay_G6.jpg')
-                <img src="{{ asset('/uploads/' . $data->file) }}" alt="image">
-                @endif
-                @endforeach
+            <a href="{{url('/banghay/gradesix')}}" type="button">
+                <img src="img/G6.jpg" alt="">
                 <p class="fw-bolder"><span class="code">&lt;</span>
                     Grade 6
                     <span class="code">&#47;&gt;</span>
